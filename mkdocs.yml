@@ -1,0 +1,41 @@
+site_name: SalsaNOW Documentation
+site_url: https://mydomain.org
+theme:
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.expand
+  name: material
+  palette:
+    primary: light green
+    scheme: slate
+    accent: lime
+  icon:
+      repo: fontawesome/brands/github
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+
+repo_url: https://github.com/dpadGuy/SalsaNOW
+repo_name: SalsaNOW
+
+nav:
+   - Introduction: index.md
+   - Setup Guide:
+     - Video Tutorial: SetupGuide/VideoTutorial.md
+   - Features:
+     - Shortcuts Saving: Features/ShortcutsSaving.md
+     - Windows Startup (Batch Script): Features/StartupBatchScript.md
+     - Game Manager (Cloud save management app): Features/GameManager.md
+     - Seelen UI Opt Out: Features/OptOutSeelenUI.md
+     - Bing Wallpaper Of The Day: Features/WallpaperOfTheDay.md
+     - Epic Games Launcher: Features/EpicGames.md
+     - .NET Install Support: Features/DotNetInstall.md
+   - Keyboard Shortcuts:
+     - ALT + F4 (Close Window): KeyboardShortcuts/CTRLF4.md
+     - WIN + D (Show Desktop): KeyboardShortcuts/CTRLK.md
+     - ALT + TAB (Switch Betwen Tabs) : KeyboardShortcuts/CTRLTAB.md
+   - FAQ: FAQ.md
+   - Donations 🫰: Donations.md
