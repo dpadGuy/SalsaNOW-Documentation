@@ -46,4 +46,4 @@
 **Nvidia GeForce NOW Persistent Storage purchase page:**<br>
 <a href="https://www.nvidia.com/en-us/account/gfn/upgrade-storage">Upgrade Storage</a><br>
 
-For getting the most out of SalsaNOW you can find out all it's available features on <a href="http://127.0.0.1:8000/Features/ShortcutsSaving">Features</a> page.
+For getting the most out of SalsaNOW you can find out all it's available features on <a href="https://documentation.salsanowfiles.work/Features/ShortcutsSaving/">Features</a> page.
