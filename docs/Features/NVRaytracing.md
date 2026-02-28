@@ -3,7 +3,7 @@
 </figure>
 
 **(Persistent storage is required)**<br>
-If you wish to enable RTX (Raytracing) on your Install-to-Play session you can simply edit the INI file from `I:\Apps\SalsaNOW\SalsaNOWConfig.ini` and modify the value from `NvidiaRaytracing = "0"` to `"1"` or add the setting with the value you want if it doesn't exist, you can then start a new session and enjoy !
+If you wish to enable RTX (Raytracing) on your Install-to-Play session you can simply edit the INI file from `I:\Apps\SalsaNOW\SalsaNOWConfig.ini` and modify the value from `NvidiaRaytracing = "0"` to `"1"` or add the setting with the value you want if it doesn't exist, save the changes and then you can start a new session and enjoy !
 
 If you want to disable RTX you can simply set the value to 0.
 
