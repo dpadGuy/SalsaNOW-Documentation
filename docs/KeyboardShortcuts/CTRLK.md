@@ -1,1 +1,0 @@
-Assigned key for use on GeForce NOW: ``CTRL + K``
