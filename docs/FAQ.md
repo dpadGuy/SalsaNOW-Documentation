@@ -34,7 +34,11 @@
 **7. Why do i get an error message when i try extracting big in size archives with 7zip (0x8004000B)**
 > This is because everything at 7zip extraction process gets stored inside the TEMP folder temporary files, which fills up the storage of the C:/ drive, the C:/ drive and the other drives except the I:/ drive only have around 60GB, in order to solve this you can access the following reddit comment link: <a href="https://www.reddit.com/r/techsupport/comments/fyahjo/comment/kgoqr82/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button">Reddit Link Post</a> <br>
 
-**8. I can't see any Install-to-Play games on GeForce NOW, why is that ?**
+**8. Why do i get an error message when i try downloading a game in SalsaNOW (0x8004000B)**
+> DO NOT USE THE OTHER DRIVES, USE THE I:/ DRIVE ONLY <br>
+> THE OTHER DRIVES ONLY HAVE AROUND 60GB
+
+**9. I can't see any Install-to-Play games on GeForce NOW, why is that ?**
 > Alliances do not have Install-to-Play yet, which means the method cannot be done in any shape or form. (This means you cannot do any method)
 > Alliances list that do not have Install-to-Play and are unsupported with any GeForce NOW methods:
 > (GFN.CO.KR, AU, Taiwan Mobile, GAME+, Cloud.GG, Zain, ABYA, StarHub, Yes, GFN.AM, rain, Digevo)
