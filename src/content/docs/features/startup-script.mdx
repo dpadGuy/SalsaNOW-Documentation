@@ -1,0 +1,63 @@
+---
+title: Startup batch script
+description: Turn on a startup batch in SalsaNOW Settings and type what should run when a session starts.
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Shot from '../../../components/Shot.astro';
+
+SalsaNOW can run a batch file when a session starts. Turn it on in SalsaNOW Settings, then type whatever you want it to launch.
+
+<Steps>
+
+1. Open the Start menu and choose **SalsaNOW Settings**.
+
+   <Shot
+   	src="/images/start-menu-settings.png"
+   	alt="Start menu with SalsaNOW Settings highlighted"
+   	caption="SalsaNOW Settings in the Start menu"
+   />
+
+2. Open **Apps**, then **Startup**.
+
+   <Shot
+   	src="/images/settings-home.jpg"
+   	alt="SalsaNOW Settings home page with Apps in the sidebar"
+   	caption="Apps is in the sidebar"
+   />
+
+   <Shot
+   	src="/images/settings-apps.jpg"
+   	alt="Apps page with Startup highlighted"
+   	caption="Open Startup"
+   />
+
+3. Turn on **Run startup batch**. SalsaNOW creates the file here:
+
+   ```text
+   I:\Apps\SalsaNOW\StartupBatch.bat
+   ```
+
+   <Shot
+   	src="/images/startup-batch-off.jpg"
+   	alt="Startup page with Run startup batch switched off"
+   	caption="Run startup batch"
+   />
+
+4. Type the commands in the box. Changes save on their own. Anything in that file runs when a SalsaNOW session starts.
+
+   <Shot
+   	src="/images/startup-batch-on.jpg"
+   	alt="Startup batch editor with a sample script that opens a web page"
+   	caption="The script saves automatically"
+   />
+
+   This example opens a web page:
+
+   ```bat
+   @echo off
+   start https://google.com
+   ```
+
+</Steps>

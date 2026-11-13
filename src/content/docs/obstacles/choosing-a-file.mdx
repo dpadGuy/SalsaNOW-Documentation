@@ -1,0 +1,60 @@
+---
+title: Choosing a file or folder
+description: Type the path when a restrictions message blocks the folder list.
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Shot from '../../../components/Shot.astro';
+
+Choosing a file, choosing a folder, or saving a file can bring up a restrictions message. Press **OK**. The folder list is blocked, so type the path yourself.
+
+<Shot
+	src="/images/restrictions-dialog.png"
+	alt="Restrictions window saying the operation was cancelled"
+	caption="Press OK"
+/>
+
+<Steps>
+
+1. Press **OK** on the restrictions message.
+
+2. Do not pick a place from the folder list. Type the path in the box at the bottom.
+
+3. For a folder, type only the folder path.
+
+   ```text
+   I:\MyWebsite
+   ```
+
+   <Shot
+   	src="/images/select-folder-path.png"
+   	alt="Select folder window with the folder path typed in the Folder box"
+   	caption="A folder path"
+   />
+
+4. For a file, type the folder, then the file name and its extension.
+
+   ```text
+   I:\MyFiles\File.exe
+   ```
+
+   ```text
+   I:\MyWebsite\MyNiceWebsite.html
+   ```
+
+   <Shot
+   	src="/images/file-upload-path.png"
+   	alt="File upload window with a full file path typed in the File name box"
+   	caption="A file path, including the extension"
+   />
+
+   <Shot
+   	src="/images/save-as-path.png"
+   	alt="Save As window with a full file path typed in the File name box"
+   	caption="The same idea when you save a file"
+   />
+
+5. Choose **Open**, **Save**, or **Upload**.
+
+</Steps>

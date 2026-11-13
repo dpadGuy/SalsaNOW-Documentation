@@ -1,0 +1,84 @@
+---
+title: FAQ
+description: Plans, saves, anti-cheat, drive space, and the other questions that come up most.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="danger" title="Unsupported accounts">
+
+SalsaNOW needs Install-to-Play. The free tier and GeForce NOW alliance partners are unsupported. The partner list is in [Install-to-Play and alliances](#why-are-install-to-play-games-missing).
+
+</Aside>
+
+## Can I play games with kernel anti-cheat?
+
+No. Easy Anti-Cheat, BattlEye, and similar tools need administrator rights. A GeForce NOW session stays at a normal user level, so those games cannot start.
+
+## Why do I get "Access is denied"?
+
+The session is a normal user account. Anything that needs administrator rights stops there. That is the same limit as kernel anti-cheat.
+
+## Why don't my games save?
+
+<Aside type="caution" title="Persistent storage">
+
+This answer is for sessions that have persistent storage. With that add-on turned off, nothing is kept between sessions.
+
+</Aside>
+
+GeForce NOW only keeps files in a few locations. If a game writes its save somewhere else, the save is gone when the session ends. A batch file can create the folders the game expects and point them at a saved location with a junction.
+
+These paths persist:
+
+- `C:\Users\kiosk\Documents`
+- `C:\Users\kiosk\AppData`
+- `C:\Users\kiosk\Saved Games`
+- `C:\Users\Public\Documents`
+- `I:\` (the whole drive)
+
+Persistent storage is a GeForce NOW add-on: [upgrade storage](https://www.nvidia.com/en-us/account/gfn/upgrade-storage).
+
+## Can I use the session for more than games?
+
+Yes. You can install and run other software, as long as it works without administrator rights.
+
+When an installer demands administrator rights, install that program on your own PC, zip it, then download the zip in the session and extract it. You then have a portable copy that can run there.
+
+## Why don't DualShock or DualSense features work?
+
+Haptics, the touchpad, and the other PlayStation controller features are covered in NVIDIA's note: [PlayStation controllers on GeForce NOW](https://nvidia.custhelp.com/app/answers/detail/a_id/5463/~/can-i-use-sony-playstation-controllers-with-geforce-now?).
+
+## Why does 7-Zip fail on large archives?
+
+Error `0x8004000B` shows up because 7-Zip unpacks through the temporary folder on `C:\`. That drive, and the other drives besides `I:\`, have about 60 GB, so a large archive fills `C:\` and the session ends.
+
+Move the temporary files off `C:\`. [This comment](https://www.reddit.com/r/techsupport/comments/fyahjo/comment/kgoqr82/) shows one way to do that.
+
+## Why do game downloads fail with 0x8004000B?
+
+Put downloads on `I:\`. The other drives have about 60 GB, and filling them produces this error.
+
+## Why are Install-to-Play games missing?
+
+Alliance partners do not offer Install-to-Play, so SalsaNOW cannot run there. The following partners are unsupported:
+
+- GFN.CO.KR
+- AU
+- Taiwan Mobile
+- GAME+
+- Cloud.GG
+- Zain
+- ABYA
+- StarHub
+- Yes
+- GFN.AM
+- rain
+- Digevo
+
+NVIDIA's own notes:
+
+- [Install-to-Play compatibility guide](https://developer.geforcenow.com/learn/guides/guide-I2P-compatibility)
+- [Install-to-Play overview](https://nvidia.custhelp.com/app/answers/detail/a_id/5675/~/geforce-now-install-to-play-overview)
+
+Feature guides are collected on the [features](/features/) page.

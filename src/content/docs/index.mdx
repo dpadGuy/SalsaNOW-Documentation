@@ -1,0 +1,80 @@
+---
+title: Home
+description: Turn a GeForce NOW session into a desktop you can use for unsupported games and other software.
+template: splash
+hero:
+  title: SalsaNOW
+  tagline: Turn a GeForce NOW session into a desktop. Play games that are not on the list, and run other software too. Setup takes a few minutes.
+  image:
+    html: '<img src="/images/salsanow-logo.png" alt="SalsaNOW logo" width="512" height="512" />'
+  actions:
+    - text: Set it up
+      link: /setup/
+      icon: right-arrow
+      variant: primary
+    - text: See features
+      link: /features/
+      icon: open-book
+      variant: minimal
+sidebar:
+  label: Home
+prev: false
+next: false
+editUrl: false
+---
+
+<Aside type="note" title="Independent project">
+
+SalsaNOW is an independent project and is not affiliated with, endorsed by, or connected to NVIDIA or GeForce NOW in any way.
+
+</Aside>
+
+<Aside type="caution" title="Which accounts work">
+
+SalsaNOW runs on accounts that include Install-to-Play. The free tier and alliance partners are left out. The [FAQ](/faq/#why-are-install-to-play-games-missing) lists those partners.
+
+</Aside>
+
+<Aside type="caution" title="Bans">
+
+The chance of a ban is extremely small. No one has reported a ban for using SalsaNOW.
+
+The risk is still there. NVIDIA does ban accounts for actions such as AFK farming and privilege-escalation exploits.
+
+No one is responsible for any punishment NVIDIA gives you.
+
+</Aside>
+
+import { Aside, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import Shot from '../../components/Shot.astro';
+
+<div class="landing-body">
+
+
+<p class="shot-hint">Select a screenshot to open it full size.</p>
+
+<Shot
+	src="/images/before-salsanow.jpg"
+	alt="GeForce NOW session before SalsaNOW, showing the Steam library with no Windows desktop"
+	caption="Before SalsaNOW"
+/>
+
+<Shot
+	src="/images/after-salsanow.jpg"
+	alt="Windows desktop after SalsaNOW, with Steam open and shortcuts along the left side"
+	caption="After SalsaNOW"
+/>
+
+<Shot
+	src="/images/session-system-about.png"
+	alt="SalsaNOW Settings on the System page, showing a GeForce RTX 5080, 56 GB of RAM, and an AMD Ryzen processor"
+	caption="System details"
+/>
+
+<Shot
+	src="/images/session-waterfox.png"
+	alt="Waterfox open on the SalsaNOW desktop"
+	caption="Waterfox"
+/>
+
+</div>

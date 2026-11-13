@@ -1,0 +1,171 @@
+@font-face {
+	font-family: Amoreiza;
+	src: url('/fonts/amoreiza-regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+.site-title,
+.hero h1 {
+	font-family: Amoreiza, sans-serif;
+	font-weight: 400;
+}
+
+:root {
+	--sl-color-accent-low: #173314;
+	--sl-color-accent: #6aaa3a;
+	--sl-color-accent-high: #d7f3c2;
+	--sl-color-text-accent: #c6eba8;
+	--sl-content-width: 46rem;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #e6f6da;
+	--sl-color-accent: #2f7a1e;
+	--sl-color-accent-high: #18420f;
+	--sl-color-text-accent: #1f5c12;
+}
+
+.sl-markdown-content {
+	font-size: 1.0625rem;
+	line-height: 1.75;
+}
+
+.sl-markdown-content kbd {
+	font-family: var(--sl-font-mono);
+	font-size: 0.85em;
+	line-height: 1.4;
+	border: 1px solid var(--sl-color-gray-5);
+	border-bottom-width: 2px;
+	border-radius: 0.35rem;
+	padding: 0.05rem 0.4rem;
+	background: var(--sl-color-gray-6);
+	white-space: nowrap;
+}
+
+.sl-markdown-content li {
+	margin-top: 0.35rem;
+}
+
+/* The features list is a set of cards, so let it use the main column
+   instead of sitting beside an empty "On this page" rail. */
+.content-panel:has(.feature-board) > .sl-container {
+	max-width: 100%;
+}
+
+.feature-board .card-grid {
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.feature-intro {
+	text-align: center;
+}
+
+main:has(.feature-board) h1 {
+	text-align: center;
+}
+
+/* Keep "On this page" a narrow rail on the right. Starlight otherwise
+   stretches that column across the leftover width. */
+@media (min-width: 72rem) {
+	[data-has-toc] .right-sidebar-container {
+		width: 14rem;
+	}
+
+	[data-has-toc] .right-sidebar {
+		right: 0;
+		left: auto;
+		width: 14rem;
+	}
+
+	[data-has-toc] .right-sidebar-panel .sl-container {
+		width: auto;
+		max-width: 100%;
+	}
+
+	[data-has-toc] .right-sidebar a {
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+
+	[data-has-sidebar][data-has-toc] .main-pane {
+		width: calc(100% - 14rem);
+		--sl-content-margin-inline: auto;
+	}
+
+	[data-has-sidebar][data-has-toc] .content-panel > .sl-container {
+		max-width: 48rem;
+		margin-inline: auto;
+	}
+}
+
+.sl-markdown-content figure img {
+	display: block;
+	margin-inline: auto;
+}
+
+/* Landing hero matches a side-by-side title and logo. The page under it stays centered. */
+[data-has-hero] .hero {
+	padding-block: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+[data-has-hero] .hero > .hero-html img {
+	width: 100%;
+	height: auto;
+}
+
+.landing-body {
+	max-width: 52rem;
+	margin-inline: auto;
+}
+
+.shot-hint {
+	text-align: center;
+}
+
+.shot-preview {
+	max-width: none;
+	max-height: none;
+	margin: auto;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	overflow: visible;
+}
+
+.shot-preview::backdrop {
+	background: rgb(0 0 0 / 0.84);
+}
+
+.shot-preview figure {
+	margin: 0;
+}
+
+.shot-preview img {
+	display: block;
+	max-width: min(92vw, 1100px);
+	max-height: 82vh;
+	width: auto;
+	height: auto;
+	margin-inline: auto;
+	border-radius: 0.6rem;
+}
+
+.shot-preview figcaption {
+	margin-top: 0.7rem;
+	color: white;
+	text-align: center;
+}
+
+.shot-preview-close {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	border: 0;
+	border-radius: 999px;
+	padding: 0.4rem 0.8rem;
+	background: white;
+	color: black;
+	cursor: pointer;
+}

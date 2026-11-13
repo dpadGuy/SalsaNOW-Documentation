@@ -1,0 +1,45 @@
+---
+title: Features
+description: What SalsaNOW adds inside a GeForce NOW session.
+tableOfContents: false
+prev: false
+next: false
+editUrl: false
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<div class="feature-intro">
+
+These are the extras SalsaNOW sets up inside a session.
+
+Some of them need persistent storage, the GeForce NOW add-on that keeps files between sessions. Pages that need it say so at the top.
+
+</div>
+
+<div class="feature-board">
+
+<CardGrid>
+	<LinkCard
+		title="Desktop shortcuts"
+		href="/features/shortcuts/"
+		description="Shortcuts on the desktop save by themselves."
+	/>
+	<LinkCard
+		title="Startup batch script"
+		href="/features/startup-script/"
+		description="Turn on a startup batch in SalsaNOW Settings and type what should start with the session."
+	/>
+	<LinkCard
+		title="SalsaSteam"
+		href="/features/salsasteam/"
+		description="Use 64-bit Steam for Deadlock, Counter-Strike 2, Denuvo games, and newer Steam features."
+	/>
+	<LinkCard
+		title="Change wallpaper"
+		href="/features/wallpaper/"
+		description="Pick a built-in background in SalsaNOW Settings, or choose your own picture."
+	/>
+</CardGrid>
+
+</div>

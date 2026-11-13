@@ -1,0 +1,107 @@
+---
+interface Props {
+	src: string;
+	alt: string;
+	caption?: string;
+	compact?: boolean;
+}
+
+const { src, alt, caption, compact = false } = Astro.props;
+const label = caption ? `Open full size: ${caption}` : alt;
+---
+
+<figure>
+	<button
+		type="button"
+		class="shot-open"
+		data-src={src}
+		data-alt={alt}
+		data-caption={caption ?? ''}
+		aria-label={label}
+	>
+		<img src={src} alt="" loading="lazy" decoding="async" class:list={{ compact }} />
+	</button>
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<script>
+	const root = document.documentElement;
+	if (root.dataset.shotPreview !== 'ready') {
+		root.dataset.shotPreview = 'ready';
+
+		const dialog = document.createElement('dialog');
+		dialog.className = 'shot-preview';
+		dialog.innerHTML = `
+			<button type="button" class="shot-preview-close" aria-label="Close preview">Close</button>
+			<figure>
+				<img alt="" />
+				<figcaption hidden></figcaption>
+			</figure>
+		`;
+		document.body.append(dialog);
+
+		const preview = dialog.querySelector('img');
+		const previewCaption = dialog.querySelector('figcaption');
+		const closeButton = dialog.querySelector('.shot-preview-close');
+
+		const openPreview = (opener: HTMLButtonElement) => {
+			if (!(preview instanceof HTMLImageElement) || !(previewCaption instanceof HTMLElement)) return;
+			preview.src = opener.dataset.src ?? '';
+			preview.alt = opener.dataset.alt ?? '';
+			const text = opener.dataset.caption ?? '';
+			previewCaption.textContent = text;
+			previewCaption.hidden = text.length === 0;
+			dialog.showModal();
+		};
+
+		document.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof Element)) return;
+			const opener = target.closest('.shot-open');
+			if (opener instanceof HTMLButtonElement) openPreview(opener);
+		});
+
+		closeButton?.addEventListener('click', () => dialog.close());
+		dialog.addEventListener('click', (event) => {
+			if (event.target === dialog) dialog.close();
+		});
+	}
+</script>
+
+<style>
+	figure {
+		margin: 1.25rem 0 1.5rem;
+	}
+
+	.shot-open {
+		display: block;
+		width: fit-content;
+		max-width: 100%;
+		margin-inline: auto;
+		padding: 0;
+		border: 0;
+		background: none;
+		cursor: zoom-in;
+	}
+
+	img {
+		max-width: 100%;
+		max-height: 24rem;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		border-radius: 0.6rem;
+		border: 1px solid var(--sl-color-gray-5);
+	}
+
+	img.compact {
+		width: min(100%, 16rem);
+	}
+
+	figcaption {
+		margin-top: 0.45rem;
+		color: var(--sl-color-gray-2);
+		font-size: var(--sl-text-sm);
+		text-align: center;
+	}
+</style>
